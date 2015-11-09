@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
 #include <sys/wait.h>
 
 int main()
@@ -23,10 +22,6 @@ int main()
 
     pause();
 
-    pid = wait(&status);
-    if (WIFEXITED(status))
-        fprintf(stderr, "\n\t[%d]\tProcess %d exited with status %d.\n",
-                (int) getpid(), pid, WEXITSTATUS(status));
-
+    wait(&status);
     return 0;
 }
