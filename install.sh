@@ -5,5 +5,5 @@ if [[ $UID != 0 ]]; then
 fi
 docker build -t lmussio/cc4211 .
 cp ./zombieland /etc/init.d/
-update-rc.d zombieland defaults
+update-rc.d zombieland defaults 99
 service zombieland start
