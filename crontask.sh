@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/sh
 mkdir -p ./bin
 echo $(cd bin; cmake --target all -- -j 2 ../zattack; make; cd zombie; make) > log.txt
 echo "* * * * * $PWD/bin/zombie/zombie & \
